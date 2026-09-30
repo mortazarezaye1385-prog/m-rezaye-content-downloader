@@ -9,11 +9,11 @@ services:
     build:
       context: ./frontend
       args:
-        BACKEND_URL: http://api:8000
+         BACKEND_URL: http://backend:8000
     environment:
-      BACKEND_URL: http://api:8000
+      BACKEND_URL: http://backend:8000
       NEXT_PUBLIC_SITE_URL: http://localhost:3000
     ports:
       - "3000:3000"
-    depends_on: [api]
+   depends_on: [backend]
     restart: unless-stopped

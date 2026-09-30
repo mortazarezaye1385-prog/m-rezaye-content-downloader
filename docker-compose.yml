@@ -1,0 +1,19 @@
+services:
+  api:
+    build: ./backend
+    env_file: ./backend/.env
+    tmpfs:
+      - /tmp/mr-content-downloader:size=4g,mode=1777
+    restart: unless-stopped
+  web:
+    build:
+      context: ./frontend
+      args:
+        BACKEND_URL: http://api:8000
+    environment:
+      BACKEND_URL: http://api:8000
+      NEXT_PUBLIC_SITE_URL: http://localhost:3000
+    ports:
+      - "3000:3000"
+    depends_on: [api]
+    restart: unless-stopped

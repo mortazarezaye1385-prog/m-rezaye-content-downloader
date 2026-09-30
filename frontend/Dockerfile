@@ -4,7 +4,7 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 # Rewrites are resolved at build time
-ARG BACKEND_URL=http://api:8000
+ARG BACKEND_URL=http://backend:8000
 ENV BACKEND_URL=$BACKEND_URL
 RUN npm run build
 

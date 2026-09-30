@@ -1,5 +1,5 @@
 services:
-  api:
+ backend:
     build: ./backend
     env_file: ./backend/.env
     tmpfs:
@@ -9,9 +9,9 @@ services:
     build:
       context: ./frontend
       args:
-         BACKEND_URL: http://backend:8000
+        BACKEND_SERVICE: http://backend:8000
     environment:
-      BACKEND_URL: http://backend:8000
+     BACKEND_SERVICE: http://backend:8000
       NEXT_PUBLIC_SITE_URL: http://localhost:3000
     ports:
       - "3000:3000"

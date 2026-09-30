@@ -1,0 +1,20 @@
+[project]
+name = "mr-content-downloader-api"
+version = "1.0.0"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 140
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "S"]
+ignore = ["S101", "S603", "S607", "B008"]
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true

@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
-const BACKEND_URL = (process.env.BACKEND_URL ?? "http://127.0.0.1:8000").replace(/\/$/, "");
+const BACKEND_URL = (
+  process.env.BACKEND_SERVICE ??
+  process.env.BACKEND_URL ??
+  "http://127.0.0.1:8000"
+).replace(/\/$/, "");
 const isDev = process.env.NODE_ENV !== "production";
 
 const csp = [

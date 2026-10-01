@@ -3,4 +3,4 @@ uvicorn[standard]>=0.30,<1
 pydantic>=2.7,<3
 httpx>=0.27,<1
 # Retrieval engine. Keep it current: platforms change often.
-yt-dlp>=2025.1.1
+yt-dlp>=2026.01.01

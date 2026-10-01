@@ -4,8 +4,8 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 # Rewrites are resolved at build time
-ARG BACKEND_SERVICE=http://127.0.0.1:8000
-ENV BACKEND_SERVICE=$BACKEND_SERVICE
+ARG BACKEND_URL=https://mr-rezaye-content-downloader.mr01.blitz.cloud
+ENV BACKEND_URL=$BACKEND_URL
 RUN npm run build
 
 FROM node:22-alpine
